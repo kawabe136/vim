@@ -64,7 +64,7 @@ endif
 "---------------------------------------------------------------------------
 " カラー設定:
 "colorscheme morning
-colorscheme gruvbox
+"colorscheme gruvbox
 
 "---------------------------------------------------------------------------
 " フォント設定:
@@ -177,26 +177,5 @@ if has('printer')
   endif
 endif
 
-map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
 
-set cscopetag
-set cscopetagorder=1
-set cscopequickfix=s-,c-,d-,i-,t-,e-
-
-"<TAB>を含むファイルを開いた際、<TAB>を何文字の空白に変換するかを設定。
-set tabstop=4
-
-set noignorecase
-set nobackup
-set expandtab
-
-"set expandtab
-"キーボードで<TAB>を入力した際、<TAB>を何文字の空白に変換するかを設定。
-set softtabstop=4
-
-"vimが自動でインデントを行った際、設定する空白数。
-set shiftwidth=4
-se ff=dos
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
