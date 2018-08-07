@@ -1,9 +1,45 @@
+"https://github.com/kawabe136/vim.git
+"---------------------------------------------------------------------------
+" ¥¦¥¤¥ó¥É¥¦¤Ë´Ø¤¹¤ëÀßÄê:
+"
+" ¥¦¥¤¥ó¥É¥¦¤ÎÉı
+set columns=100
+" ¥¦¥¤¥ó¥É¥¦¤Î¹â¤µ
+set lines=50
+" ¥³¥Ş¥ó¥É¥é¥¤¥ó¤Î¹â¤µ(GUI»ÈÍÑ»ş)
+set cmdheight=2
+" ²èÌÌ¤ò¹õÃÏ¤ËÇò¤Ë¤¹¤ë (¼¡¹Ô¤ÎÀèÆ¬¤Î " ¤òºï½ü¤¹¤ì¤ĞÍ­¸ú¤Ë¤Ê¤ë)
+"colorscheme evening " (GUI»ÈÍÑ»ş)
 
+"---------------------------------------------------------------------------
+"---------------------------------------------------------------------------
+" ¥Õ¥©¥ó¥ÈÀßÄê:
+"
+if has('win32')
+  " WindowsÍÑ
+  set guifont=Migu_1M:h12:cSHIFTJIS
+  "set guifont=HGºŞ¼¯¸M:h12:cSHIFTJIS
+  "set guifont=MS_Gothic:h12:cSHIFTJIS
+  "set guifont=MS_Mincho:h12:cSHIFTJIS
+  " ¹Ô´Ö³Ö¤ÎÀßÄê
+  set linespace=1
+  " °ìÉô¤ÎUCSÊ¸»ú¤ÎÉı¤ò¼«Æ°·×Â¬¤·¤Æ·è¤á¤ë
+  if has('kaoriya')
+    set ambiwidth=auto
+  endif
+elseif has('mac')
+  set guifont=Osaka¡İÅùÉı:h14
+elseif has('xfontset')
+  " UNIXÍÑ (xfontset¤ò»ÈÍÑ)
+  set guifontset=a14,r14,k14
+endif
 
-" ã‚«ãƒ©ãƒ¼è¨­å®š:
-"colorscheme morning
+"---------------------------------------------------------------------------
+" ¥«¥é¡¼ÀßÄê:
 colorscheme gruvbox
+"---------------------------------------------------------------------------
 
+"gtag
 map <C-j> :GtagsCursor<CR>
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
@@ -12,19 +48,38 @@ set cscopetag
 set cscopetagorder=1
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
+"ÂçÊ¸»ú¾®Ê¸»ú¤Î¶èÊÌ¤ò¤¹¤ë
 set noignorecase
+
+"¥Õ¥¡¥¤¥ëÊÑ¹¹¸å¤ËÊİÂ¸¤µ¤ì¤ë¥Õ¥¡¥¤¥ëÊÔ½¸Á°¤Î¥Ğ¥Ã¥¯¥¢¥Ã¥×¤òºîÀ®¤·¤Ê¤¤
 set nobackup
+
+"ÆşÎÏ¥â¡¼¥É¤ÇTab¥­¡¼²¡²¼»ş¤ä¥¤¥ó¥Ç¥ó¥È¤Îºİ¡¢¥¿¥ÖÊ¸»ú¤Ç¤Ï¤Ê¤¯¡¢È¾³Ñ¥¹¥Ú¡¼¥¹¤¬ÁŞÆş¤µ¤ì¤ë
 set expandtab
 
-"<TAB>ã‚’å«ã‚€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã„ãŸéš›ã€<TAB>ã‚’ä½•æ–‡å­—ã®ç©ºç™½ã«å¤‰æ›ã™ã‚‹ã‹ã‚’è¨­å®šã€‚
+"<TAB>¤ò´Ş¤à¥Õ¥¡¥¤¥ë¤ò³«¤¤¤¿ºİ¡¢<TAB>¤ò²¿Ê¸»ú¤Î¶õÇò¤ËÊÑ´¹¤¹¤ë¤«¤òÀßÄê¡£
 set tabstop=4
 
 "set expandtab
-"ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã§<TAB>ã‚’å…¥åŠ›ã—ãŸéš›ã€<TAB>ã‚’ä½•æ–‡å­—ã®ç©ºç™½ã«å¤‰æ›ã™ã‚‹ã‹ã‚’è¨­å®šã€‚
+"¥­¡¼¥Ü¡¼¥É¤Ç<TAB>¤òÆşÎÏ¤·¤¿ºİ¡¢<TAB>¤ò²¿Ê¸»ú¤Î¶õÇò¤ËÊÑ´¹¤¹¤ë¤«¤òÀßÄê¡£
 set softtabstop=4
 
-"vimãŒè‡ªå‹•ã§ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’è¡Œã£ãŸéš›ã€è¨­å®šã™ã‚‹ç©ºç™½æ•°ã€‚
+"vim¤¬¼«Æ°¤Ç¥¤¥ó¥Ç¥ó¥È¤ò¹Ô¤Ã¤¿ºİ¡¢ÀßÄê¤¹¤ë¶õÇò¿ô¡£
 set shiftwidth=4
 
+"¥«¡¼¥½¥ë¹Ô¤ò¥Ï¥¤¥é¥¤¥È
+set cursorline
+
 se ff=dos
+
+" OS¤Î¥¯¥ê¥Ã¥×¥Ü¡¼¥É¤ò»ÈÍÑ¤¹¤ë
+set clipboard+=unnamed
+
+" ¥¤¥ó¥µ¡¼¥È¥â¡¼¥É¤ËÆş¤Ã¤¿»ş¤Ë¥«¡¼¥½¥ë¹Ô(Îó)¤Î¿§¤òÊÑ¹¹¤¹¤ë
+"augroup vimrc_change_cursorline_color
+"  autocmd!
+"  autocmd InsertEnter * highlight CursorLine term=underline cterm=underline ctermbg=240 gui=underline guibg=#666666 | highlight CursorColumn ctermfg=231 ctermbg=31 gui=bold guifg=#ffffff guibg=#0087af
+"  autocmd InsertLeave * highlight CursorLine term=underline cterm=underline ctermbg=235 gui=underline guibg=#333333 | highlight CursorColumn term=reverse ctermbg=235 guibg=#333333
+"augroup END
+
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro

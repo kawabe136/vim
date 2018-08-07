@@ -64,16 +64,13 @@ endif
 "---------------------------------------------------------------------------
 " カラー設定:
 "colorscheme morning
-"colorscheme gruvbox
 
 "---------------------------------------------------------------------------
 " フォント設定:
 "
 if has('win32')
   " Windows用
-  set guifont=Migu_1M:h12:cSHIFTJIS
-  "set guifont=HGｺﾞｼｯｸM:h12:cSHIFTJIS
-  "set guifont=MS_Gothic:h12:cSHIFTJIS
+  set guifont=MS_Gothic:h12:cSHIFTJIS
   "set guifont=MS_Mincho:h12:cSHIFTJIS
   " 行間隔の設定
   set linespace=1
@@ -92,9 +89,9 @@ endif
 " ウインドウに関する設定:
 "
 " ウインドウの幅
-set columns=100
+set columns=80
 " ウインドウの高さ
-set lines=50
+set lines=25
 " コマンドラインの高さ(GUI使用時)
 set cmdheight=2
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
