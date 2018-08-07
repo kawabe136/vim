@@ -75,6 +75,9 @@ se ff=dos
 " OSのクリップボードを使用する
 set clipboard+=unnamed
 
+" 挿入モードでCtrl+pを押すとクリップボードの内容を貼り付けられるようにする "
+imap <C-k>  <ESC>"*pa
+
 " インサートモードに入った時にカーソル行(列)の色を変更する
 "augroup vimrc_change_cursorline_color
 "  autocmd!
